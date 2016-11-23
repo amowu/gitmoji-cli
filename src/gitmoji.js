@@ -74,8 +74,6 @@ class GitmojiCli {
 			.then(res => console.log(chalk.blue(res)))
 			.catch(err => console.error(chalk.red(`ERROR: ${err.stderr}`)));
 		execa.shellSync(`git commit ${signed} -m "${commitTitle}" -m "${commitBody}"`)
-			.then(res => console.log(chalk.blue(res.stdout)))
-			.catch(err => console.error(chalk.red(`ERROR: ${err.stderr}`)));
 	}
 
 	_questions(gitmojis) {
