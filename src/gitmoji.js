@@ -73,7 +73,7 @@ class GitmojiCli {
 		execa.stdout('git', ['add', '.'])
 			.then(res => console.log(chalk.blue(res)))
 			.catch(err => console.error(chalk.red(`ERROR: ${err.stderr}`)));
-		execa.shell(`git commit ${signed} -m "${commitTitle}" -m "${commitBody}"`)
+		execa.shellSync(`git commit ${signed} -m "${commitTitle}" -m "${commitBody}"`)
 			.then(res => console.log(chalk.blue(res.stdout)))
 			.catch(err => console.error(chalk.red(`ERROR: ${err.stderr}`)));
 	}
